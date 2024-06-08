@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
   padding: 0;
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
-body{
+
+body {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -14,87 +15,104 @@ body{
   align-items: center;
   background-color: mediumslateblue;
 }
-.currency-convertor{
-background-color: white;
-width: 500px;
-height: auto;
-padding:20px;
-margin: 10px;
-border-radius: 5px;
+
+.currency-convertor {
+  background-color: white;
+  width: 500px;
+  height: auto;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
 
 }
-.section-1{
-  padding: 10px;
-display: flex;
-justify-content: center;
-text-align: center;
+
+.section-1 {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
-.section-1 img{
+
+.section-1 img {
   border-radius: 5px;
 }
-.section-2{
-  width:100%;
+
+.section-2 {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-h1{
-  border: 2px dotted rgb(56, 143, 230);
-  width: 450p;
+
+h1 {
+  border-top: 2px dotted rgb(78, 82, 87);
+  border-bottom: 2px dotted rgb(78, 82, 87);
+  width: 450px;
   font-size: 30px;
   padding: 10px;
   margin-bottom: 5px;
   color: dimgrey;
+  text-align: center;
+
 }
-.input-container,.input-container-one,.input-container-two{
+
+.input-container,
+.input-container-one,
+.input-container-two {
   padding: 10px;
   font-weight: 500;
   font-size: 20px;
   color: dimgrey;
 
 }
-.input-container-two{
+
+.input-container-two {
   margin-bottom: 10px;
 }
-label{
+
+label {
   display: block;
   padding: 5px;
-  
+
 }
-input , select{
+
+input,
+select {
   border: 2px solid lightblue;
   border-radius: 5px;
   color: dimgrey;
 }
-#amount{
-  width:380px;
+
+#amount {
+  width: 380px;
   padding: 10px;
   font-size: 10px;
 }
-#currency-from{
-  width:400px;
+
+#currency-from {
+  width: 400px;
   padding: 10px;
   font-size: 15px;
   font-size: medium;
 }
-#currency-to{
-  width:400px;
+
+#currency-to {
+  width: 400px;
   padding: 10px;
   font-size: 15px;
   font-size: medium;
 }
-.footer{
-  width:450px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  border: 2px dotted rgb(56, 143, 230);
-  background-position: center;
+
+.footer {
+  border-top: 2px dotted rgb(78, 82, 87);
+  border-bottom: 2px dotted rgb(78, 82, 87);
+  width: 450px;
   font-size: 25px;
-  font-weight: 500;
-  color: royalblue;
+  padding: 10px;
+  margin-bottom: 5px;
+  color: dimgrey;
+  text-align: center;
 }
-
-

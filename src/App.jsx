@@ -1,4 +1,13 @@
+import { useState } from "react";
+
 const App = () => {
+
+
+  const[amount,setAmount]=useState(1);
+  const [fromCurrency,setFromCurrency]=useState("");
+  const [toCurrency,setToCurrency]=useState("");
+  const [convertedAmount,setConvertedAmount]=(null);
+
   return (<>
     <div className="currency-convertor">
       <div className="section-1">
@@ -6,15 +15,15 @@ const App = () => {
       </div>
       <div className="section-2">
         <div className="title">
-          <h1>Currency_convertor</h1>
+          <h1>CURRENCY_CONVERTER</h1>
         </div>
         <div className="input-container">
           <label className="amount" htmlFor="amount" >Amount :</label>
-          <input type="text" id="amount" />
+          <input value={amount} type="text" id="amount" />
         </div>
         <div className="input-container-one">
           <label className="currency-from" htmlFor="currency-from">From Currency :</label>
-          <select id="currency-from">
+          <select id="currency-from" value={fromCurrency}>
             <option value="USD">USD-UNITED STATUS DOLLAR</option>
             <option value="EUR">EUR-EURO</option>
             <option value="GBP">GBP-BRITISH POUND STERLING</option>
@@ -29,7 +38,7 @@ const App = () => {
         </div>
         <div className="input-container-two">
           <label className="currency-to" htmlFor="currency-to">To Currency :</label>
-          <select id="currency-to">
+          <select id="currency-to" value={toCurrency}>
             <option value="USD">USD-UNITED STATUS DOLLAR</option>
             <option value="EUR">EUR-EURO</option>
             <option value="GBP">GBP-BRITISH POUND STERLING</option>
@@ -44,7 +53,7 @@ const App = () => {
         </div>
       </div>
       <div className="footer">
-        <p>1-INR Equals To 82.25-US</p>
+        <p className="converted-Amount">{amount}{fromCurrency} Equals To {convertedAmount}{toCurrency}</p>
       </div>
     </div>
   </>);
