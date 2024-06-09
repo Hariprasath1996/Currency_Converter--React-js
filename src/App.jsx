@@ -5,7 +5,7 @@ import axios from "axios";
 const App = () => {
 
 
-  const[amount,setAmount]=useState(1);
+  const[amount,setAmount]=useState(10);
   const [fromCurrency,setFromCurrency]=useState("USD");
   const [toCurrency,setToCurrency]=useState("INR");
   const [convertedAmount,setConvertedAmount]=useState(null);
@@ -18,8 +18,11 @@ useEffect(
 const convertRate = async ()=>{
   try {
     let url =`https://api.exchangerate-api.com/v4/latest/${fromCurrency}`
+    // use axios method instead of fetch 
     const res = await axios.get(url);
-    console.log(res);
+    // use console.log function for  how data's are fixed in api 
+    // console.log(res);
+    // set this value to setExchange variable for given value , Example - usd (fromCurrency)to inr (toCurrency)
     setExchangeRate(res.data.rates[toCurrency])
     
   } catch (error) {
