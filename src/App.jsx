@@ -8,14 +8,14 @@ const App = () => {
   const[amount,setAmount]=useState(1);
   const [fromCurrency,setFromCurrency]=useState("USD");
   const [toCurrency,setToCurrency]=useState("INR");
-  const [convertedAmount,setConvertedAmount]=("");
-  // create one more state variable for ,getting current exchange rate values 
+  const [convertedAmount,setConvertedAmount]=useState(null);
+  // create one more state variable for ,getting current exchange rate values from jason data from api url
   const [exchangeRate,setExchangeRate]=useState(null);
 
   // create a component 
 useEffect(
   ()=>{
-const convert = async ()=>{
+const convertRate = async ()=>{
   try {
     let url =`https://api.exchangerate-api.com/v4/latest/${fromCurrency}`
     const res = await axios.get(url);
@@ -25,9 +25,18 @@ const convert = async ()=>{
   } catch (error) {
     console.error ("Error Fetching Exchange Data :" , error)
   }
-  convert()
+  
 }
-});
+convertRate()
+},[fromCurrency,toCurrency]);
+
+// create another use Effect for user enter the amount and that time exchange rate value will be added ......exchangeRate from json data 
+
+useEffect(()=>{
+  if (exchangeRate !== null) {
+    setConvertedAmount((amount*exchangeRate).toFixed(2))
+  }
+},[amount,exchangeRate])
 // create new component for get  amount  value in their input 
 const eventAmountHandler=(e)=>{
 const value = parseFloat(e.target.value);
@@ -53,7 +62,7 @@ const getToCurrency=(e)=>{
         </div>
         <div className="input-container">
           <label className="amount" htmlFor="amount" >Amount :</label>
-          <input onChange={eventAmountHandler} value={amount} type="text" id="amount" />
+          <input onChange={eventAmountHandler} value={amount} type="number" id="amount" />
         </div>
         <div className="input-container-one">
           <label className="currency-from" htmlFor="currency-from">From Currency :</label>
@@ -87,7 +96,7 @@ const getToCurrency=(e)=>{
         </div>
       </div>
       <div className="footer">
-        <p className="converted-Amount">{amount}{fromCurrency} Equals To {convertedAmount}{toCurrency}</p>
+        <p className="converted-Amount"> <span>{amount} </span>{fromCurrency}  Equals To  <span>{convertedAmount} </span>  {toCurrency}</p>
       </div>
     </div>
   </>);

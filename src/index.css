@@ -54,7 +54,7 @@ h1 {
   font-size: 30px;
   padding: 10px;
   margin-bottom: 5px;
-  color: dimgrey;
+  color: rgb(70, 33, 33);
   text-align: center;
 
 }
@@ -83,13 +83,13 @@ input,
 select {
   border: 2px solid lightblue;
   border-radius: 5px;
-  color: dimgrey;
+  color: rgb(12, 12, 12);
 }
 
 #amount {
   width: 380px;
   padding: 10px;
-  font-size: 10px;
+  font-size: 15px;
 }
 
 #currency-from {
@@ -107,12 +107,16 @@ select {
 }
 
 .footer {
-  border-top: 2px dotted rgb(78, 82, 87);
-  border-bottom: 2px dotted rgb(78, 82, 87);
+  border: 2px solid rgb(78, 82, 87);
   width: 450px;
   font-size: 25px;
-  padding: 10px;
+  padding: 20px;
   margin-bottom: 5px;
-  color: dimgrey;
+  color: rgb(15, 235, 151);
   text-align: center;
+  font-size: xx-large;
+  font-weight: bold;
+}
+span{
+  color: rgb(86, 60, 235);
 }
